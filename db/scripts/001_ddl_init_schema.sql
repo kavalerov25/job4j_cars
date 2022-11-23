@@ -1,12 +1,12 @@
-CREATE TABLE auto_user (
+create TABLE auto_user (
     id       SERIAL PRIMARY KEY,
-    login    VARCHAR(30) NOT NULL ,
+    login    VARCHAR(30) NOT NULL UNIQUE ,
     password VARCHAR(30) NOT NULL
 );
 
-CREATE TABLE auto_post (
+create TABLE auto_post (
     id           SERIAL PRIMARY KEY,
     text         TEXT NOT NULL ,
-    created      TIMESTAMP,
-    auto_user_id int REFERENCES auto_post (id)
+    created      TIMESTAMP NOT NULL,
+    user_id INT NOT NULL REFERENCES auto_user (id)
 );
