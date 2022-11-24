@@ -8,4 +8,5 @@
     <include file="scripts/001_ddl_init_schema.sql" relativeToChangelogFile="true"/>
     <include file="scripts/update_002.sql" relativeToChangelogFile="true"/>
     <include file="scripts/update_003.sql" relativeToChangelogFile="true"/>
+    <include file="scripts/004_ddl_create_participates_table.sql" relativeToChangelogFile="true"/>
 </databaseChangeLog>
