@@ -4,6 +4,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,6 +19,9 @@ public class Post {
     private int id;
 
     private String text;
+
+    private byte[] photo;
+    private LocalDateTime created;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
