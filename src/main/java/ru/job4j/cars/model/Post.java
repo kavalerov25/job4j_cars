@@ -4,6 +4,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -15,14 +16,16 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     private int id;
-    private String login;
-    private String password;
+
+    private String text;
+
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
+
     @OneToMany
     @JoinColumn(name = "post_id")
-    private List<PriceHistory> priceHistory;
+    private List<PriceHistory> priceHistory = new ArrayList<>();
 
     @ManyToMany
     @JoinTable(
@@ -30,5 +33,9 @@ public class Post {
             joinColumns = {@JoinColumn(name = "post_id")},
             inverseJoinColumns = {@JoinColumn(name = "user_id")}
     )
-    private List<User> participates;
+    private List<User> participates = new ArrayList<>();
+
+    @OneToOne
+    @JoinColumn(name = "car_id")
+    private Car car;
 }
