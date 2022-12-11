@@ -24,7 +24,7 @@ public class PostRepository {
      */
     public List<Post> findCreatedLastDay() {
         LocalDateTime now = LocalDateTime.now();
-        LocalDateTime yesterday = LocalDateTime.now().minusDays(1);
+        LocalDateTime yesterday = now.minusDays(1);
         return crudRepository.query(
                 FIND_CAR_FOR_CURRENT_TIME,
                 Post.class,
