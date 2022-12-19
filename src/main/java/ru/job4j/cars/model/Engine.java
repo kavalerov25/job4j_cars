@@ -6,8 +6,10 @@ import javax.persistence.*;
 
 @Data
 @Entity
+@AllArgsConstructor
 @Table(name = "engine")
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
+@NoArgsConstructor
 public class Engine {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -10,6 +10,7 @@ import java.util.Set;
 @Entity
 @Table(name = "driver")
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
+@NoArgsConstructor
 public class Driver {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
